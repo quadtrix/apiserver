@@ -4,7 +4,7 @@ Golang simple API server supporting both basic TCP traffic and HTTP traffic (inc
 # Features
 This simple API server supports TCP/TCPS communication and HTTP/HTTPS communication. If you want to use this API server within your organization and you're not using global CA's to sign your certificates, you can add your own CA to the trusted CA's:
 
-    as := apiserevr.New(ST_HTTPS)
+    as := apiserver.New(ST_HTTPS)
     as.AddCA(<cafile>)
     
 # Use in your code
