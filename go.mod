@@ -1,3 +1,3 @@
-module quadtrix.nl/go/apiserver
+module github.com/quadtrix/apiserver
 
 go 1.16
