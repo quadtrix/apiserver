@@ -366,6 +366,9 @@ func (as APIServer) listenSSL(handler APIHandler) {
 				}
 			}
 		}
+		if handler == nil {
+			panic(errors.New("cannot send request to nil handler"))
+		}
 		response := handler(*req)
 		wdata := as.buildWriteData(response)
 		_, _ = conn.Write(wdata)
@@ -436,6 +439,9 @@ func (as APIServer) listenOpen(handler APIHandler) {
 					}
 				}
 			}
+		}
+		if handler == nil {
+			panic(errors.New("cannot send request to nil handler"))
 		}
 		response := handler(*req)
 		wdata := as.buildWriteData(response)

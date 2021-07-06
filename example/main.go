@@ -42,5 +42,8 @@ func main() {
 	}
 	as.RegisterContext("/", genericHandler)
 	as.RegisterContext("/version", versionHandler)
-	as.Listen(nil)
+	err = as.Listen(nil)
+	if err != nil {
+		log.Fatalln(err)
+	}
 }
